@@ -1,0 +1,50 @@
+def make_list_for_send(lst: List):
+	with open(file_to_who_send, "r", encoding="utf-8") as f:
+		id_list = f.readlines()
+		{ids_set.add(i[:-1]) for i in id_list}
+		lst = list(ju for ju in ids_set)
+	return lst
+
+
+lst_for_send = make_list_for_send(new_ids_list)
+
+
+def sender(n_lst: List):
+	for i in n_lst:  # Перебор всех id в из списка
+		with (Client('my_account', ira_id, ira_hash) as app,
+				open('sended.txt', 'a+', encoding='utf-8') as sended,
+				open('sender_log.txt', 'a+', encoding='utf-8') as log):
+			try:
+				app.send_message(i, text=text)  # Отправляем сообщение
+				sleep(randint(2, 4))
+				sended.write(str(i) + "\n")
+				n_lst.remove(i)
+			except Exception as err:
+				log.write(f'{i} не получил сообщение в {datetime.now().strftime("%Y:%b:%d %H:%M:%S")} по причине: {err}\n')
+				n_lst.remove(i)
+
+
+def main():
+	logging.basicConfig(level=logging.INFO)
+	total = 0  # всего ids считает скольким уже сделана попытка отправить
+	temp_count = 0  # временная считалка, чтоб не спамить сильно
+	loop_count = 0  # считает какой цикл отправки сейчас идёт
+	total_loops = len(ids_set) / 11  # сколько всего циклов
+	loops_remain = total_loops - loop_count  # сколько циклов осталось
+	while total < len(ids_set):  # пока total меньше числа id в изначальном ids_set будет отправлять
+		if temp_count < 10:
+			if "10:00:00" < datetime.now().time().strftime("%H:%M:%S") < "21:00:00":
+				temp_count += 1
+				total += 1
+				sender(lst_for_send)  # список кому отправить в этот цикл
+				sleep(randint(3, 5))
+		else:
+			temp_count = 0
+			loop_count += 1
+			send_for_who(my_tg_id, loops_remain)
+			sleep(randint(2521, 5442))
+
+
+ставишь ``` и имя языка
+пишешь код
+ещё раз ```
