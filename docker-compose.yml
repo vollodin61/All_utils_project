@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  sender:
+    container_name: sender_bot
+    build:
+      context: .
+    command: python3 services/sender/send.py
+    restart: always
+    env_file:
+      - ".env"
+    volumes:
+      - .:/All_utils_project
