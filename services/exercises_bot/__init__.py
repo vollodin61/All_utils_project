@@ -1,1 +1,1 @@
-import exercises_list, path_to_file, randomiser
+# from . import exercises_list, path_to_file, randomiser

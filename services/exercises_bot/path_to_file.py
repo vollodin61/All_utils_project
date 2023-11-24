@@ -1,8 +1,8 @@
 import os
 
-project = 'exercises_bot'
+project = 'services/exercises_bot'
 
-path = os.path.abspath(os.path.join('..', '..', project))
+# path = os.path.abspath(os.path.join('..', '..', project))
 
 
 def list_dir(project):
@@ -12,6 +12,6 @@ def list_dir(project):
         print('__', path)
 
 d = 'data_files'
-list_dir(path)
-print(f'\n{os.listdir(path)}\n')
+list_dir(project)
+print(f'\n{os.listdir(project)}\n')
 print(f'\n    {(os.path.join(os.path.dirname("garbagnya")))}')

@@ -1,1 +1,1 @@
-import list_to_links
+from . import list_to_links

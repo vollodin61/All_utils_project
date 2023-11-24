@@ -1,1 +1,1 @@
-import some_text_to_send, yep
+# import some_text_to_send, yep

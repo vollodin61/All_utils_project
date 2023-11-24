@@ -19,8 +19,8 @@ my_tg_id = env("my_tg_id")
 my_tg_username = env("my_tg_username")
 ira_id = env("ira_id")
 ira_hash = env("ira_hash")
-# file_to_who_send = 'data/lst_TOSEND_PRIGLOS.txt'
-file_to_who_send = '/home/i/MyPros/F/All_utils_project/services/tg_parser_group/3_lingva_groups.txt'
+file_to_who_send = 'data/lst_TOSEND_PRIGLOS.txt'
+file_to_who_send = "services/tg_parser_group/3_lingva_groups.txt"
 ids_set = set()
 new_ids_list = list()
 
