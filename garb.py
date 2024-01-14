@@ -1,4 +1,9 @@
-from datetime import datetime
+import re
 
-print(datetime.now().time().strftime("%H:%M:%S") < "21:00:00")
 
+st = "https://www.instagram.com/vika.sheshura?igsh=aGc3MHo1dW8wZTlj"
+# # st = "?jfggjhfg"
+# print(re.findall(pattern=r"(?<!\?).+", string=st))
+
+t = "alex Sergey Ivanov?, Ivan Ivanov"
+print(re.findall(pattern=r"^[^?]*$", string=st))

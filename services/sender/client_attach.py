@@ -16,9 +16,13 @@ ids_set = set()
 new_ids_list = list()
 
 
-def attach():
+def attach_to_ira():
 	with Client('ira_acc', ira_id, ira_hash) as app:
 		app.send_message(my_tg_username, text='Client successfully created')
 
 
-attach()
+def attach_to_ifill():
+	with Client('ira_acc', id_ifill, hash_ifill) as app:
+		app.send_message(my_tg_username, text='Client successfully created')
+
+

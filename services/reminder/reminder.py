@@ -14,7 +14,7 @@ _hash_ = '6381a688ef53e5f6dfc29bbc29bc9381'
 #     222374754, 330332417, 817907280, 222593486,
 # ]
 
-with open("data/users.txt", "r", encoding="utf-8") as f:  # TODO тут неправильно указан адрес файла с пользователями
+with open("/users.txt", "r", encoding="utf-8") as f:  # TODO тут неправильно указан адрес файла с пользователями
     id_list = f.readlines()
 
 

@@ -4,7 +4,7 @@ TAGS = 'BADTAGS.txt'
 count = 0
 
 with open(ORIGINAL) as orig, \
-        open(EDITED, 'w+', encoding='utf-8') as edit,\
+        open(EDITED, 'w+', encoding='utf-8') as edit, \
         open(TAGS) as tags:
 
     tag = tags.readlines()

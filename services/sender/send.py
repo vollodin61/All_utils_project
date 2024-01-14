@@ -6,8 +6,8 @@ from environs import Env
 from datetime import datetime
 from random import randint
 from time import sleep
-from services.test_sender.some_text_to_send import txt
-from data.emojies import Emo
+from All_utils_project.services.test_sender.some_text_to_send import txt
+from All_utils_project.data.emojies import Emo
 
 env = Env()
 env.read_env()
@@ -25,24 +25,6 @@ ids_set = set()
 new_ids_list = list()
 
 text = txt
-
-
-
-# text = (
-# 	f'Приветствую! Меня зовут Филатова Ирина, я тренер Лингвистики, соавтор одноименной книги)) {emoj(Emo.hugs)}\n\n'
-# 	f'Лингвистика - очень объёмный и сложный тренинг, и я его бесконечно люблю {emoj(Emo.heart)}\n\n'
-# 	f'При этом, тема комплиментов раскрыта в нём, на мой взгляд, не полностью {emoj(Emo.omg_cat_face)}\n'
-# 	f'А ведь это один из важнейших навыков для установления раппорта {emoj(Emo.red_exclamation)}\n\n'
-# 	f'30 ноября стартует мой авторский онлайн курс "Доброе слово для кошки" {emoj(Emo.hand_over_mouth)}\n\n'
-# 	f'На нём мы разберём не только, что говорить и как говорить, '
-# 	f'но и психо-физиологические основы этого процесса {emoj(Emo.nerd_face)}\n\n'
-# 	f'Комплименты в зависимости от цели (для разного уровня раппорта)\n\n'
-# 	f'2 лекционных вебинара в неделю, и 3 встречи обратной связи.'
-# 	f' Запись будет, будет чат, в котором я так же буду отвечать на вопросы {emoj(Emo.big_smile)}\n\n'
-# 	f'Записаться, ознакомиться подробнее тут https://fillatova.ru\n'
-# 	f'Price = 7000{Emo.ruble}\n\n'
-# 	f'Там есть даже подробный mindmap, где возле вкладок есть цифры - сколько ещё подвкладок {emoj(Emo.explosive_head)}\n\n'
-# 	f'Присоединяйся! Давай вместе создавать новые горизонты мышления! {emoj(Emo.sunglasses)}')
 
 
 def send_for_who(for_who, remain):
