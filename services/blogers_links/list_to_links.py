@@ -10,7 +10,7 @@ with (open(FROM, "r", encoding="utf-8") as lst, open(TO, "w+", encoding="utf-8")
 with (open(TO, 'r') as edit, open(RESULT, 'w', encoding='utf-8') as result):
 	count = 0
 	for line in edit:
-		if count < 10:
+		if count < 4:
 			result.write(line)
 			count += 1
 		else:

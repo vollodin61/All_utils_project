@@ -3,20 +3,16 @@ EDITED = 'Midway.txt'
 TAGS = 'BADTAGS.txt'
 count = 0
 
-with open(ORIGINAL) as orig, \
-        open(EDITED, 'w+', encoding='utf-8') as edit, \
-        open(TAGS) as tags:
+with open(ORIGINAL, 'r', encoding='utf-8') as ORIG, \
+        open(EDITED, 'w+', encoding='utf-8') as EDIT, \
+        open(TAGS) as T:
 
-    tag = tags.readlines()
+    [EDIT.write(line) for line in ORIG if line not in T.readlines()]
 
-    for line in orig:
-        if line not in tag:
-            edit.write(line)
-
-with open(EDITED, 'r') as edit, \
+with open(EDITED, 'r') as EDIT, \
         open('RESULT.txt', 'w', encoding='utf-8') as result:
 
-    for line in edit:
+    for line in EDIT:
         if count < 30:
             result.write(line)
             count += 1

@@ -6,4 +6,4 @@ st = "https://www.instagram.com/vika.sheshura?igsh=aGc3MHo1dW8wZTlj"
 # print(re.findall(pattern=r"(?<!\?).+", string=st))
 
 t = "alex Sergey Ivanov?, Ivan Ivanov"
-print(re.findall(pattern=r"^[^?]*$", string=st))
+print(re.findall(pattern=r".+(?=\?)", string=st))
